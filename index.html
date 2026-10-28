@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geprüfter Betriebswirt (IHK): Schriftliche Prüfung</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="gate-screen" class="screen">
+  <div class="gate-box">
+    <div class="brand">Uprising Test Prep</div>
+    <h1>Geprüfter Betriebswirt (IHK)<br>Schriftliche Prüfung</h1>
+    <p class="muted">Geben Sie den Zugangscode aus Ihrem Buch ein.</p>
+    <input id="access-code-input" type="text" placeholder="Zugangscode" autocomplete="off">
+    <button id="gate-submit" class="btn btn-primary">Weiter</button>
+    <p id="gate-error" class="error"></p>
+  </div>
+</div>
+
+<div id="mode-screen" class="screen" style="display:none">
+  <div class="mode-grid">
+    <div class="mode-card" id="mode-cases">
+      <h2>Einzelne Teilaufgabe</h2>
+      <p>60 schriftliche Teilaufgaben. Lesen Sie Ausgangslage und Anlagen, lösen Sie auf Papier gegen eine Uhr und bewerten Sie sich anschließend mit dem Übungsraster.</p>
+    </div>
+    <div class="mode-card" id="mode-mock">
+      <h2>Voller 240-Minuten-Mock</h2>
+      <p>Eine betriebliche Gesamtsituation mit sechs Teilaufgaben, 100 Übungspunkten und einer ununterbrochenen 240-Minuten-Uhr. Danach bearbeiten Sie die komplette Selbstbewertung.</p>
+    </div>
+  </div>
+  <p class="foot muted">Die Punkteverteilung ist das eigene Übungsraster des Buches, kein amtliches Raster. Jede der drei echten Aufgabenstellungen muss für sich mindestens 50 Punkte erreichen.
+  <a href="flashcards/index.html" target="_blank">Karteikarten</a></p>
+</div>
+
+<div id="list-screen" class="screen" style="display:none">
+  <header class="app-header">
+    <div><div class="brand">Uprising Test Prep</div><h1 id="list-title">Teilaufgaben</h1></div>
+    <div class="header-actions"><a href="#" id="back-from-list" class="btn btn-ghost">Zurück</a></div>
+  </header>
+  <div class="filters">
+    <select id="filter-mock"><option value="">Alle Mocks</option></select>
+    <select id="filter-domain"><option value="">Alle Handlungsbereiche</option></select>
+    <span id="list-count" class="muted"></span>
+  </div>
+  <div id="item-list" class="station-list"></div>
+</div>
+
+<div id="mockpick-screen" class="screen" style="display:none">
+  <header class="app-header">
+    <button id="back-from-mockpick" class="btn btn-ghost">&#8592; Zurück</button>
+    <div>Voller 240-Minuten-Mock</div>
+  </header>
+  <div class="station-body">
+    <section class="panel">
+      <h2>Mock wählen</h2>
+      <p class="muted">Planen Sie vier Stunden ein. Die Uhr läuft ohne Pause. Sie sehen alle sechs Teilaufgaben und bestimmen die Reihenfolge selbst.</p>
+      <div id="mock-buttons" class="timer-controls"></div>
+    </section>
+  </div>
+</div>
+
+<div id="work-screen" class="screen" style="display:none">
+  <header class="app-header">
+    <button id="back-from-work" class="btn btn-ghost">&#8592; Zurück</button>
+    <div id="work-title"></div>
+  </header>
+  <div class="station-body">
+    <div class="meta-row"><span id="work-badge" class="badge"></span></div>
+    <section class="panel timer-panel">
+      <div class="mock-bar"><h2 id="timer-heading">Uhr</h2><span id="timer-sub" class="muted"></span></div>
+      <div id="timer-display" class="big">00:00</div>
+      <div id="timer-label" class="muted">Bereit</div>
+      <div class="timer-controls">
+        <button id="timer-start" class="btn btn-primary">Uhr starten</button>
+        <button id="timer-reset" class="btn btn-ghost">Zurücksetzen</button>
+      </div>
+    </section>
+    <div id="work-body"></div>
+    <section class="panel" id="reveal-panel">
+      <button id="reveal-btn" class="btn btn-primary btn-block">Lösung und Bewertung zeigen</button>
+      <p id="reveal-warn" class="muted"></p>
+    </section>
+    <section id="answer-section" class="panel answer-section" style="display:none"></section>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
